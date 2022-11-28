@@ -15,7 +15,9 @@ pub enum ContractError {
     #[error("Invalid Coin")]
     InvalidCoin {},
 
+    #[error("Need to wait until block {withdraw_block} to withdraw")]
+    CannotWithdrawCw20Yet { withdraw_block: String },
+
     #[error("User does not have coins from this cw20 to withdraw")]
     NoCw20ToWithdraw {},
-
 }
